@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje Interactivo</title>
+    <title>Historia de una Princesa</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #fdeff2;
             color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
         h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            color: #e84393;
+            margin-top: 20px;
         }
         p {
             font-size: 1.2em;
-            margin-bottom: 30px;
+            margin: 20px auto;
+            width: 80%;
+            line-height: 1.8;
         }
         .btn {
             display: inline-block;
@@ -33,51 +31,47 @@
             font-size: 1em;
             font-weight: bold;
             color: white;
-            background-color: #007bff;
+            background-color: #6c5ce7;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #341f97;
             transform: scale(1.1);
         }
-        img {
-            max-width: 80%;
+        .gif {
+            width: 100%;
+            max-width: 400px;
             height: auto;
-            margin-top: 20px;
-            border-radius: 10px;
+            margin: 20px auto;
             display: none;
+        }
+        .container {
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>¡Buenos días, Princesa! 🌞</h1>
-    <p>Haz clic en los botones para recibir sorpresas. 😊</p>
-    
-    <button class="btn" onclick="showGif()">Ver un GIF lindo</button>
-    <button class="btn" onclick="changeColor()">Cambiar el color de fondo</button>
-    <button class="btn" onclick="playSound()">Escuchar un sonido especial</button>
-    
-    <img id="gif" src="https://media.giphy.com/media/2v170e71aanfi/giphy.gif" alt="Sorpresa GIF">
-    
-    <audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
-
+    <h1>Historia de una Princesa 🌸</h1>
+    <div class="container">
+        <p>Había una vez una princesa increíblemente hermosa y valiente. Su sonrisa iluminaba los días más oscuros, y su corazón era puro como un cristal.</p>
+        <button class="btn" onclick="showGif('gif1')">Leer más 🌟</button>
+        <img id="gif1" class="gif" src="https://media.giphy.com/media/3oz8xPjPPx8PpUIj6w/giphy.gif" alt="Princesa sonriente">
+        
+        <p>En su reino, todos la admiraban, pero había alguien especial que la amaba más que a nada en el mundo. Él la llamaba "mi princesa" y hacía todo para verla feliz.</p>
+        <button class="btn" onclick="showGif('gif2')">Siguiente parte ❤️</button>
+        <img id="gif2" class="gif" src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Príncipe enamorado">
+        
+        <p>Un día, él le prometió que escribiría la historia más bonita para ella, una que duraría para siempre, igual que su amor.</p>
+        <button class="btn" onclick="showGif('gif3')">Final de la historia ✨</button>
+        <img id="gif3" class="gif" src="https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif" alt="Corazones flotando">
+    </div>
     <script>
-        function showGif() {
-            const gif = document.getElementById('gif');
+        function showGif(id) {
+            const gif = document.getElementById(id);
             gif.style.display = 'block';
-        }
-
-        function changeColor() {
-            const colors = ['#f8c291', '#82ccdd', '#fad390', '#b8e994', '#6a89cc'];
-            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        function playSound() {
-            const sound = document.getElementById('sound');
-            sound.play();
         }
     </script>
 </body>
