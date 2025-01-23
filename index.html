@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Interactivo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Buenos días, Princesa! 🌞</h1>
+    <p>Haz clic en los botones para recibir sorpresas. 😊</p>
+    
+    <button class="btn" onclick="showGif()">Ver un GIF lindo</button>
+    <button class="btn" onclick="changeColor()">Cambiar el color de fondo</button>
+    <button class="btn" onclick="playSound()">Escuchar un sonido especial</button>
+    
+    <img id="gif" src="https://media.giphy.com/media/2v170e71aanfi/giphy.gif" alt="Sorpresa GIF">
+    
+    <audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+    <script>
+        function showGif() {
+            const gif = document.getElementById('gif');
+            gif.style.display = 'block';
+        }
+
+        function changeColor() {
+            const colors = ['#f8c291', '#82ccdd', '#fad390', '#b8e994', '#6a89cc'];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function playSound() {
+            const sound = document.getElementById('sound');
+            sound.play();
+        }
+    </script>
+</body>
+</html>
