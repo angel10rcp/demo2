@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia de una Princesa</title>
+    <title>Perdóname ❤️</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #fdeff2;
+            text-align: center;
+            background-color: #fdf2f8;
             color: #333;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
         h1 {
+            color: #e63946;
+            margin-top: 50px;
             font-size: 2.5em;
-            color: #e84393;
-            margin-top: 20px;
         }
         p {
             font-size: 1.2em;
@@ -24,54 +24,68 @@
             width: 80%;
             line-height: 1.8;
         }
-        .btn {
-            display: inline-block;
+        .btn-container {
+            margin-top: 30px;
+        }
+        button {
             padding: 15px 30px;
             margin: 10px;
             font-size: 1em;
             font-weight: bold;
-            color: white;
-            background-color: #6c5ce7;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
         }
-        .btn:hover {
-            background-color: #341f97;
+        .btn-accept {
+            background-color: #38b000;
+            color: white;
+        }
+        .btn-accept:hover {
+            background-color: #2d6a4f;
+        }
+        .btn-deny {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        .btn-deny:hover {
+            background-color: #c1121f;
+        }
+        .btn-deny:active {
             transform: scale(1.1);
-        }
-        .gif {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            margin: 20px auto;
-            display: none;
-        }
-        .container {
-            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Historia de una Princesa 🌸</h1>
-    <div class="container">
-        <p>Había una vez una princesa increíblemente hermosa y valiente. Su sonrisa iluminaba los días más oscuros, y su corazón era puro como un cristal.</p>
-        <button class="btn" onclick="showGif('gif1')">Leer más 🌟</button>
-        <img id="gif1" class="gif" src="https://media.giphy.com/media/3oz8xPjPPx8PpUIj6w/giphy.gif" alt="Princesa sonriente">
-        
-        <p>En su reino, todos la admiraban, pero había alguien especial que la amaba más que a nada en el mundo. Él la llamaba "mi princesa" y hacía todo para verla feliz.</p>
-        <button class="btn" onclick="showGif('gif2')">Siguiente parte ❤️</button>
-        <img id="gif2" class="gif" src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Príncipe enamorado">
-        
-        <p>Un día, él le prometió que escribiría la historia más bonita para ella, una que duraría para siempre, igual que su amor.</p>
-        <button class="btn" onclick="showGif('gif3')">Final de la historia ✨</button>
-        <img id="gif3" class="gif" src="https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif" alt="Corazones flotando">
+    <h1>Perdóname ❤️</h1>
+    <p>No quiero que estemos mal. Te prometo mejorar y hacerte feliz cada día.</p>
+    <div class="btn-container">
+        <button class="btn-accept" onclick="acceptForgiveness()">Sí, te perdono 😊</button>
+        <button class="btn-deny" id="denyButton" onclick="changeText()">No puedo... 💔</button>
     </div>
     <script>
-        function showGif(id) {
-            const gif = document.getElementById(id);
-            gif.style.display = 'block';
+        const denyButton = document.getElementById('denyButton');
+        const phrases = [
+            "¿Seguro no me perdonas? 😢",
+            "¡Prometo mejorar! 🥺",
+            "Te quiero demasiado para rendirme. 💖",
+            "Por favor, dame otra oportunidad. 🙏",
+            "No puedo sin ti. 😔",
+            "Eres mi todo, no quiero perderte. ❤️"
+        ];
+        let index = 0;
+
+        function changeText() {
+            index = (index + 1) % phrases.length;
+            denyButton.textContent = phrases[index];
+        }
+
+        function acceptForgiveness() {
+            document.body.innerHTML = `
+                <h1>¡Gracias por perdonarme! 🥰</h1>
+                <p>Prometo no fallarte más y hacer todo para que estemos bien. Te amo mucho. 💕</p>
+                <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Abrazo" style="width: 100%; max-width: 400px; margin: 20px auto;">
+            `;
         }
     </script>
 </body>
